@@ -1,7 +1,19 @@
 # QCE26 Numerics — QAOA Mixer Comparison for the TSP
 
-Companion code for the IEEE Quantum Week 2026 submission.
-Preprint: <https://arxiv.org/abs/2604.24297>
+Companion code for the IEEE Quantum Week 2026 submission--[arXiv](https://arxiv.org/abs/2604.24297).
+Please cite this paper as:
+```
+@misc{schwiering2026exhaustivefeasibleparametrisationapplications,
+    title           = {Exhaustive and feasible parametrisation with applications to the travelling salesperson problem}, 
+    author          = {Marvin Schwiering and Timo Ziegler and Lennart Binkowski and Benjamin Sambale},
+    year            = {2026},
+    eprint          = {2604.24297},
+    archivePrefix   = {arXiv},
+    primaryClass    = {quant-ph},
+    url             = {https://arxiv.org/abs/2604.24297}, 
+}
+```
+
 
 This repository reproduces the numerical experiments comparing three QAOA
 mixer strategies on the Traveling Salesman Problem (TSP):
