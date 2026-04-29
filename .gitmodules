@@ -1,0 +1,6 @@
+[submodule "extern/nlopt"]
+	path = extern/nlopt
+	url = https://github.com/stevengj/nlopt.git
+[submodule "extern/orkan"]
+	path = extern/orkan
+	url = https://github.com/Timo59/orkan.git

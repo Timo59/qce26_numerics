@@ -1,0 +1,32 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build -j
+
+      - name: Verify all experiment executables linked
+        run: |
+          set -euo pipefail
+          for strategy in adjacency bubbles binsert; do
+            for target in "test_${strategy}" "${strategy}_ex1" "${strategy}_ex2" "${strategy}_ex3"; do
+              test -x "build/${target}" || { echo "missing: ${target}"; exit 1; }
+            done
+          done
+          echo "All 12 executables present."
